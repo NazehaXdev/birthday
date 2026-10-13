@@ -241,7 +241,7 @@ const typewriterPhrases = [
   "Today is Tanvir's Day! 🍕",
   "Happy Birthday Tanvir — The King of Chill & Fun! 🕶️",
   "One year older, but did the wisdom kick in yet? 🤔",
-  "Forever Young, Forever Iconic, World's Best Bro! ❤️",
+  "Forever Young, Forever Iconic, World's Best Person! ❤️",
   
 ];
 
