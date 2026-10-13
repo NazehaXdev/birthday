@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Tanvir! 🎂🎉 | The Ultimate Celebration</title>
+  
+  <!-- Google Fonts: Outfit and Bangers -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Outfit:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Background Floating Balloons & Confetti Canvases -->
+  <div class="floating-elements-container" id="floatingContainer"></div>
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- Top Sticky Control Bar -->
+  <div class="top-control-bar">
+    <button class="music-btn" id="musicToggleBtn" title="Play / Pause Birthday Tune">
+      <span id="musicIcon">🎶</span>
+      <span id="musicStatusText">Play Music 🎶</span>
+      <div class="visualizer">
+        <div class="v-bar"></div>
+        <div class="v-bar"></div>
+        <div class="v-bar"></div>
+        <div class="v-bar"></div>
+      </div>
+    </button>
+    <button class="blast-btn" id="confettiBlastBtn" title="Confetti Blast">
+      🎉 Confetti Blast!
+    </button>
+  </div>
+
+  <!-- HERO / WELCOME SECTION -->
+  <header class="hero-section">
+    <div class="hero-glow-orb"></div>
+    <div class="container">
+      <div class="hero-badge-pill">
+        <span>✨</span> TODAY IS A NATIONAL HOLIDAY: TANVIR'S BIRTHDAY! <span>✨</span>
+      </div>
+
+      <h1 class="hero-title-main">
+        HAPPY BIRTHDAY
+        <span class="hero-name-highlight">TANVIR</span>
+      </h1>
+
+      <div class="hero-typewriter-wrap">
+        <span id="typewriterText"></span><span class="typewriter-cursor">&nbsp;</span>
+      </div>
+
+      <div class="hero-cta-group">
+        <a href="#cakeSection" class="btn-primary">🎂 Cake Cutting Ceremony</a>
+        <a href="#wheelSection" class="btn-gold">🎡 Wheel of Fortune (Treat)</a>
+        <a href="#gameSection" class="btn-secondary">🎈 Balloon Pop Game</a>
+        <a href="#wishesSection" class="btn-secondary">💌 Birthday Wishes</a>
+      </div>
+
+      <!-- Fun Counters / Stats Bar -->
+      <div class="hero-counters-bar">
+        <div class="counter-card">
+          <div class="counter-num">100%</div>
+          <div class="counter-label">Awesome Vibe</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-num">999+</div>
+          <div class="counter-label">Pending Treats 🍕</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-num">∞</div>
+          <div class="counter-label">Love & Wishes ❤️</div>
+        </div>
+        <div class="counter-card">
+          <div class="counter-num">#1</div>
+          <div class="counter-label">Best Friend Tanvir 👑</div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- SECTION 1: CAKE CUTTING CEREMONY -->
+  <section id="cakeSection" class="cake-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">CEREMONY TIME</span>
+        <h2 class="section-title">Virtual Cake Cutting Ceremony 🎂</h2>
+        <p class="section-subtitle">Blow out the candles first, then slice the delicious cake for Tanvir!</p>
+      </div>
+
+      <div class="glass-card cake-stage">
+        <!-- 3D Layered Cake Display -->
+        <div class="cake-container">
+          <div class="candles-row">
+            <div class="candle">
+              <div class="candle-wick"></div>
+              <div class="flame"></div>
+            </div>
+            <div class="candle">
+              <div class="candle-wick"></div>
+              <div class="flame"></div>
+            </div>
+            <div class="candle">
+              <div class="candle-wick"></div>
+              <div class="flame"></div>
+            </div>
+          </div>
+          <div class="cake-tier tier-top"></div>
+          <div class="cake-tier tier-bottom"></div>
+          <div class="cake-plate"></div>
+          <div class="cake-cut-overlay"></div>
+        </div>
+
+        <!-- Controls -->
+        <div class="cake-controls">
+          <button id="blowCandlesBtn" class="btn-secondary">💨 Blow Candles</button>
+          <button id="cutCakeBtn" class="btn-secondary">🔪 Slice the Cake!</button>
+        </div>
+
+        <div class="cake-reaction-card" id="cakeReactionText">
+          🎂 Blow out the candles to kick off the sweet birthday party!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2: SPIN THE WHEEL OF FORTUNE -->
+  <section id="wheelSection" class="wheel-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">LUCKY DRAW</span>
+        <h2 class="section-title">Tanvir's Wheel of Fortune 🎡</h2>
+        <p class="section-subtitle">Spin the wheel to find out what treat or dare Tanvir owes us today!</p>
+      </div>
+
+      <div class="glass-card wheel-stage">
+        <div class="wheel-outer-wrap">
+          <div class="wheel-pointer"></div>
+          <canvas id="wheelCanvas" class="wheel-canvas" width="340" height="340"></canvas>
+          <div class="wheel-center-cap" id="wheelCenterBtn" onclick="spinWheel()">🎯</div>
+        </div>
+
+        <button id="spinWheelBtn" class="btn-gold">🎰 Spin the Wheel (Spin Now)</button>
+
+        <div class="spin-result-box" id="wheelResultText">
+          👉 Spin the wheel to reveal Tanvir's birthday destiny!
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: THE RUNAWAY TREAT BUTTON -->
+  <section class="runaway-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">CHALLENGE</span>
+        <h2 class="section-title">Tanvir's Runaway Treat Button — Catch It! 🏃‍♂️💨</h2>
+        <p class="section-subtitle">Extracting a treat from Tanvir isn't that simple! Try hovering or clicking the button!</p>
+      </div>
+
+      <div class="runaway-box" id="runawayBox">
+        <div class="runaway-bubble" id="runawayBubble">Haha! You can't catch me! 😜</div>
+        <button class="runaway-btn" id="runawayTreatBtn">🍕 Claim Treat From Tanvir!</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 4: BALLOON POP MINI-GAME -->
+  <section id="gameSection" class="game-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">MINI GAME</span>
+        <h2 class="section-title">Balloon Pop Challenge 🎈💥</h2>
+        <p class="section-subtitle">Pop as many balloons as you can in 30 seconds! Golden star balloons give bonus points!</p>
+      </div>
+
+      <div class="glass-card">
+        <div class="game-arena" id="gameArena">
+          <div class="game-hud">
+            <div class="hud-item">Score: <span class="hud-val" id="gameScore">0</span></div>
+            <div class="hud-item">Time: <span class="hud-val" id="gameTimer">30</span>s</div>
+          </div>
+
+          <!-- Start Overlay -->
+          <div class="game-start-overlay" id="gameStartOverlay">
+            <h2 style="font-size: 2.2rem; color: #ffd700;">🎈 Balloon Popping Party!</h2>
+            <p style="font-size: 1.2rem; max-width: 450px;">
+              Click or tap on the floating balloons as fast as you can to score high!
+            </p>
+            <button class="btn-gold" onclick="startGame()">▶ Start Game</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 5: HOW WELL DO YOU KNOW TANVIR? QUIZ -->
+  <section class="quiz-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">FUN QUIZ</span>
+        <h2 class="section-title">How Well Do You Know Tanvir? 🤔</h2>
+        <p class="section-subtitle">Answer these hilarious questions to prove how close you are with the birthday boy!</p>
+      </div>
+
+      <div id="quizContainer">
+        <!-- Rendered dynamically by script.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 6: ROAST & COMPLIMENT GENERATOR -->
+  <section class="roast-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">ROAST OR TOAST</span>
+        <h2 class="section-title">Roast or Toast Tanvir? 😈😇</h2>
+        <p class="section-subtitle">Generate hilarious friendly roasts or heartfelt compliments with a single click!</p>
+      </div>
+
+      <div class="glass-card" style="max-width: 700px; margin: 0 auto; text-align: center;">
+        <div class="roast-card-display" id="roastDisplay">
+          "Click the buttons below to generate a hilarious roast or a sweet wish for Tanvir!"
+        </div>
+
+        <div style="display: flex; justify-content: center; gap: 15px; flex-wrap: wrap;">
+          <button class="btn-primary" onclick="generateRoast()">😈 Roast Tanvir</button>
+          <button class="btn-gold" onclick="generateCompliment()">😇 Sweet Compliment</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 7: VIRTUAL GIFT UNBOXING -->
+  <section class="gifts-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">SURPRISE BOXES</span>
+        <h2 class="section-title">Virtual Gift Unboxing 🎁</h2>
+        <p class="section-subtitle">Three mysterious birthday boxes for Tanvir! Click any box to unbox the surprise!</p>
+      </div>
+
+      <div class="gifts-grid">
+        <div class="gift-card" onclick="openGift(0)">
+          <div class="gift-box-icon">🎁</div>
+          <h3 class="gift-title">The Royal Box</h3>
+          <p class="gift-hint">Click to unbox</p>
+        </div>
+        <div class="gift-card" onclick="openGift(1)">
+          <div class="gift-box-icon">📦</div>
+          <h3 class="gift-title">Tech Mystery</h3>
+          <p class="gift-hint">Click to unbox</p>
+        </div>
+        <div class="gift-card" onclick="openGift(2)">
+          <div class="gift-box-icon">🍗</div>
+          <h3 class="gift-title">Foodie Delight</h3>
+          <p class="gift-hint">Click to unbox</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 8: MEMORY POLAROID PHOTO WALL -->
+  <section class="memories-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">PHOTO GALLERY</span>
+        <h2 class="section-title">Tanvir's Memory Wall 📸</h2>
+        <p class="section-subtitle">Unforgettable moments, signature expressions, and iconic vibes of Tanvir!</p>
+      </div>
+
+      <div class="polaroids-grid">
+        <div class="polaroid-frame" style="--rot: -3deg;">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-img-wrap">
+            <svg width="100%" height="100%" viewBox="0 0 200 200" style="background: #e0f2fe;">
+              <circle cx="100" cy="80" r="40" fill="#38bdf8"/>
+              <circle cx="85" cy="75" r="5" fill="#0f172a"/>
+              <circle cx="115" cy="75" r="5" fill="#0f172a"/>
+              <path d="M 85 95 Q 100 115 115 95" stroke="#0f172a" stroke-width="4" fill="none" stroke-linecap="round"/>
+              <text x="100" y="40" font-size="28" text-anchor="middle">👑</text>
+              <rect x="50" y="130" width="100" height="70" rx="20" fill="#0284c7"/>
+            </svg>
+          </div>
+          <div class="polaroid-caption">Tanvir: The Boss Vibe 😎</div>
+        </div>
+
+        <div class="polaroid-frame" style="--rot: 2.5deg;">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-img-wrap">
+            <svg width="100%" height="100%" viewBox="0 0 200 200" style="background: #fef3c7;">
+              <text x="100" y="110" font-size="70" text-anchor="middle">🍕</text>
+              <text x="100" y="160" font-size="16" font-weight="bold" fill="#b45309" text-anchor="middle">Treat Pending</text>
+            </svg>
+          </div>
+          <div class="polaroid-caption">Treat Reminder Face 🤤</div>
+        </div>
+
+        <div class="polaroid-frame" style="--rot: -2deg;">
+          <div class="polaroid-tape"></div>
+          <div class="polaroid-img-wrap">
+            <img id="customPolaroidImg" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='200' height='200' viewBox='0 0 200 200'><rect width='200' height='200' fill='%23fce7f3'/><text x='100' y='100' font-size='50' text-anchor='middle'>🎉</text><text x='100' y='140' font-family='sans-serif' font-size='14' text-anchor='middle' fill='%23be185d'>Happy Birthday!</text></svg>" alt="Tanvir Photo">
+          </div>
+          <div class="polaroid-caption">Upload Real Photo Here 📸</div>
+        </div>
+      </div>
+
+      <!-- Upload real photo option -->
+      <div class="polaroid-upload-btn-wrap">
+        <label for="photoUploadInput" class="btn-primary" style="cursor: pointer;">
+          📤 Upload Tanvir's Real Photo
+        </label>
+        <input type="file" id="photoUploadInput" accept="image/*" style="display: none;">
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 9: INTERACTIVE WISHES WALL & GUESTBOOK -->
+  <section id="wishesSection" class="wishes-section">
+    <div class="container">
+      <div class="section-title-wrap">
+        <span class="section-badge">GUESTBOOK</span>
+        <h2 class="section-title">Tanvir's Birthday Wishes Wall 💌</h2>
+        <p class="section-subtitle">Leave your warmest, sweetest, or funniest birthday message for Tanvir!</p>
+      </div>
+
+      <!-- Preloaded & user added wishes masonry -->
+      <div class="wishes-masonry" id="wishesContainer"></div>
+
+      <!-- Add Wish Form -->
+      <div class="glass-card" style="max-width: 600px; margin: 0 auto;">
+        <h3 style="margin-bottom: 16px; text-align: center; font-size: 1.4rem; color: #ffd700;">✍️ Send Your Birthday Wish</h3>
+        <form class="add-wish-form" id="newWishForm">
+          <input type="text" id="wishNameInput" class="form-input" placeholder="Your Name (e.g. Rakib / Best Friend)" required>
+          <textarea id="wishTextInput" class="form-textarea" rows="3" placeholder="Write your heartfelt or hilarious birthday wish for Tanvir..." required></textarea>
+          <button type="submit" class="btn-gold" style="width: 100%;">💌 Post Birthday Wish</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL DIALOG FOR POPUPS -->
+  <div class="modal-overlay" id="generalModal">
+    <div class="modal-dialog">
+      <button class="modal-close-btn" onclick="closeModal()">✕</button>
+      <div class="modal-icon">🎉</div>
+      <h3 class="modal-title" id="modalTitle">Surprise!</h3>
+      <p class="modal-content-text" id="modalContent">Message appears here.</p>
+      <button class="btn-primary" onclick="closeModal()">Awesome 👍</button>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="footer-text">
+        Made with <span class="footer-heart">❤️</span> exclusively for <strong>Tanvir</strong>'s Birthday!
+      </p>
+      <p style="margin-top: 8px; font-size: 0.95rem; color: #94a3b8;">
+        May your year ahead be packed with adventure, huge success, good health, and sweet treats! Happy Birthday Tanvir! 🎂🎈✨
+      </p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="script.js"></script>
+</body>
+</html>
